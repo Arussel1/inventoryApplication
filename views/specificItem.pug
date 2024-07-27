@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    div.specificItemContainer
+        img.specificImage(src=item.image, alt='Item image')
+        div.textContainer
+            h1 #{item.name}
+            p #{item.description} 
+            p $#{item.price} 
+            p Quantities: #{item.quantity}
+            a(href=`/category/${item.category}`) Category: #{item.category} 
+            br
+            a(href=`/brand/${item.brand}`) Brand: #{item.brand} 
+            div.specificItemButtonContainer 
+                button(onclick=`redirect('/items/${item.name}/update')`) Update Item
+                button(onclick=`confirmDelete('${item.name}')`) Delete Item
+                button(onclick=`redirect('/items')`) Return to Storage 

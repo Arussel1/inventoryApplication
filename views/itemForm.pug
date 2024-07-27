@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    h1 Update Item
+    form(action= '/items/' + item.name + '/update' method='POST')
+     label(for='name') Name: 
+     input(type='text' name='name' value=item.name min=1)
+     br
+
+     label(for='description') Description: 
+     textarea( name='description' rows="3" cols="40" ) #{item.description}
+     br
+
+     label(for='price') Price: 
+     input(type='number' name='price' step="0.01" value=item.price min=1)
+     br
+
+     label(for='quantity') Quantities: 
+     input(type='number' name='quantity' value=item.quantity min=1)
+     br
+
+     label(for='category') Category: 
+     select(name='category')
+      each cat in item.allcategories
+        if item.category == cat
+          option(value=cat selected) #{cat}
+        else
+          option(value=cat) #{cat}
+     br
+    
+          
+     label(for='brand') Brand: 
+     select(name='brand')
+      each brand in item.allbrand
+        if item.brand == brand
+          option(value=brand selected) #{brand}
+        else
+          option(value=brand) #{brand}
+     br
+     
+     label(for='image') Image: 
+     input(type='text' name='image' value=item.image min=1)
+     br
+          
+     button(type='submit') Update Item

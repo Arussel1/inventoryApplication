@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.image{
+  mix-blend-mode: multiply;
+  width: 200px;
+  height: 200px;
+}
+
+.specificImage{
+  mix-blend-mode: multiply;
+  width: 250px;
+  height: 250px;
+}

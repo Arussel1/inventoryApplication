@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title} 
+  p Welcome to #{title} 
+  
+  each item in allItems
+    button.itemContainer(onclick=`redirect('/items/${item.name}')`) 
+      img.image(src=item.image, alt='Item image')
+      p #{item.name}
+
+  
