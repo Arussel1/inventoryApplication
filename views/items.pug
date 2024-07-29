@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 #{title} 
+  p Welcome to #{title} 
+  div.buttonContainer 
+    button(onclick=`redirect('/')`) Return Home 
+    button(onclick=`redirect('/items/create')`) Create new item
+  each item in allItems
+    button.itemContainer(onclick=`redirect('/items/${item.name}')`) 
+      img.image(src=item.image, alt='Item image')
+      p #{item.name}
+
+  

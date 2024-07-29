@@ -4,7 +4,7 @@ block content
     h1 Update Item
     form(action= '/items/' + item.name + '/update' method='POST')
      label(for='name') Name: 
-     input(type='text' name='name' value=item.name min=1)
+     input(type='text' name='name' value=item.name min='1')
      br
 
      label(for='description') Description: 
@@ -12,11 +12,11 @@ block content
      br
 
      label(for='price') Price: 
-     input(type='number' name='price' step="0.01" value=item.price min=1)
+     input(type='number' name='price' step="0.01" value=item.price min='0')
      br
 
      label(for='quantity') Quantities: 
-     input(type='number' name='quantity' value=item.quantity min=1)
+     input(type='number' name='quantity' value=item.quantity min='1')
      br
 
      label(for='category') Category: 
@@ -38,8 +38,11 @@ block content
           option(value=brand) #{brand}
      br
      
-     label(for='image') Image: 
+     label(for='image') Image (web URL): 
      input(type='text' name='image' value=item.image min=1)
      br
           
      button(type='submit') Update Item
+  
+    each error in errors 
+     p #{error.msg}

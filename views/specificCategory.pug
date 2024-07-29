@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div.categoryContainer
+      img.image(src=category.image, alt='Category image')
+      div.textContainer
+        p #{category.name}
+        p #{category.description}
+
+  p Item in #{category.name}
+  each item in items
+    button.itemContainer(onclick=`redirect('/items/${item.name}')`) 
+      img.image(src=item.image, alt='Item image')
+      p #{item.name}
+  button(onclick=`redirect('/categories/${category.name}/update')`) Update Categories
+  button(onclick=`confirmDeleteCategory('${category.name}')`) Delete Categories
+  button(onclick=`redirect('/categories')`) Return to Categories 
+

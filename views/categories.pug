@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 #{title} 
+  p Welcome to #{title} 
+  div.buttonContainer 
+    button(onclick=`redirect('/')`) Return Home 
+    button(onclick=`redirect('/categories/create')`) Create new category
+  each category in allCategories
+    button.categoryContainer(onclick=`redirect('/categories/${category.name}')`) 
+      img.image(src=category.image, alt='Category image')
+      div.textContainer
+        p #{category.name}
+        p #{category.description}
+  

@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Update Category
+    form(action= '/categories/' + category.name + '/update' method='POST')
+     label(for='name') Name: 
+     input(type='text' name='name' value=category.name min='1' required)
+     br
+
+     label(for='description') Description: 
+     textarea( name='description' rows="3" cols="40" ) #{category.description}
+     br
+
+     label(for='image') Image (web URL): 
+     input(type='text' name='image' value=category.image)
+     br
+          
+     button(type='submit') Update Category

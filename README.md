@@ -49,4 +49,4 @@ npm run build
 + [Node](https://nodejs.org/en) as runtime environment. <br>
 + [Pug](https://pugjs.org/api/getting-started.html) as server-side template rendering. <br>
 + [Express](https://expressjs.com/) as backend framework. <br>
-+ [PostgreSQL](https://www.postgresql.org/) SQL database for storing message. <br>
++ [PostgreSQL](https://www.postgresql.org/) SQL database for storing inventory information. <br>

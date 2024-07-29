@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Create Category
+    form(action= '/categories/create' method='POST')
+     label(for='name') Name: 
+     input(type='text' name='name' value='' min='1' required)
+     br
+
+     label(for='description') Description: 
+     textarea( name='description' rows="3" cols="40" ) 
+     br
+
+     label(for='image') Image (web URL): 
+     input(type='text' name='image' value='')
+     br
+          
+     button(type='submit') Create Category

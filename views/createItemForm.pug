@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    h1 Create Item
+    form(action= '/items/create'  method='POST')
+     label(for='name') Name: 
+     input(type='text' name='name' value='' min='1' required)
+     br
+
+     label(for='description') Description: 
+     textarea( name='description' rows="3" cols="40" required) 
+     br
+
+     label(for='price') Price: 
+     input(type='number' name='price' step="0.01" value='0' min='0' required)
+     br
+
+     label(for='quantity') Quantities: 
+     input(type='number' name='quantity' value='1' min='1' required)
+     br
+
+     label(for='category') Category: 
+     select(name='category')
+      each cat in categories
+          option(value=cat.category) #{cat.category}
+     br
+    
+          
+     label(for='brand') Brand: 
+     select(name='brand')
+      each brand in brands
+          option(value=brand.brand) #{brand.brand}
+     br
+     
+     label(for='image') Image (web URL): 
+     input(type='text' name='image' value='' min=1)
+     br
+          
+     button(type='submit') Create Item

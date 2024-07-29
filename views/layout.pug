@@ -8,9 +8,14 @@ html
         console.log(`Redirecting to: ${url}`);
         window.location.href = url;
       }
-      function confirmDelete(item) {
+      function confirmDeleteItem(item) {
         if (window.confirm(`Are you sure you want to delete ${item}?`)) {
           window.location.href = `/items/${item}/delete`;
+        }
+      }
+      function confirmDeleteCategory(category) {
+        if (window.confirm(`Are you sure you want to delete ${category}?`)) {
+          window.location.href = `/categories/${category}/delete`;
         }
       }
   body
