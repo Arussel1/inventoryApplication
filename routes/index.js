@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const itemsControllers = require('../controllers/itemsControllers');
 const categoriesControllers = require('../controllers/categoriesControllers');
+const brandControllers = require('../controllers/brandControllers.js');
 
 /* Home page. */
 
@@ -40,5 +41,21 @@ router.get('/categories/:category/update', categoriesControllers.renderCategoryF
 router.post('/categories/:category/update', categoriesControllers.updateCategory);
 
 router.get('/categories/:category/delete', categoriesControllers.deleteCategory); 
+
+/* Brands page */
+
+router.get('/brands', brandControllers.renderedBrands);
+
+router.get('/brands/create', brandControllers.renderCreateBrandForm);
+
+router.post('/brands/create', brandControllers.createBrand);
+
+router.get('/brands/:brand', brandControllers.renderedSpecificBrand);
+
+router.get('/brands/:brand/update', brandControllers.renderBrandForm);
+
+router.post('/brands/:brand/update', brandControllers.updateBrand);
+
+router.get('/brands/:brand/delete', brandControllers.deleteBrand); 
 
 module.exports = router;

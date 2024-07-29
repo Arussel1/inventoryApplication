@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 #{title} 
+  p Welcome to #{title} 
+  div.buttonContainer 
+    button(onclick=`redirect('/')`) Return Home 
+    button(onclick=`redirect('/brands/create')`) Create new brand
+  each brand in allBrands
+    button.categoryContainer(onclick=`redirect('/brands/${brand.name}')`) 
+      img.image(src=brand.image, alt='Brand image')
+      div.textContainer
+        p #{brand.name}
+        p #{brand.description}
+  

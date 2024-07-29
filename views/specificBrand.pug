@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  div.categoryContainer
+      img.image(src=brand.image, alt='Brand image')
+      div.textContainer
+        p #{brand.name}
+        p #{brand.description}
+
+  p Item in #{brand.name}
+  each item in items
+    button.itemContainer(onclick=`redirect('/items/${item.name}')`) 
+      img.image(src=item.image, alt='Item image')
+      p #{item.name}
+  button(onclick=`redirect('/brands/${brand.name}/update')`) Update Brand
+  button(onclick=`confirmDeleteBrand('${brand.name}')`) Delete Brand
+  button(onclick=`redirect('/brands')`) Return to Brands 
+

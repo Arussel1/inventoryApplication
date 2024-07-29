@@ -42,12 +42,13 @@ const SQL4 = `INSERT INTO categories (name, description, image) VALUES
 const SQL5 = `CREATE TABLE IF NOT EXISTS brand (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
-  image TEXT
+  description TEXT
+  image TEXT,
 );`;
 
-const SQL6 = `INSERT INTO brand (name, image) VALUES 
-('Oishi', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUahkoNKuswQ2mov4_6TKIrIv6huhToFz5g&s'),
-('PepsiCo', 'https://skai.io/wp-content/uploads/2021/05/PepsiCo-Small-Logo.png');
+const SQL6 = `INSERT INTO brand (name, description, image) VALUES 
+('Oishi', 'Oishi comes from the Japanese word meaning delicious. Dates back to 1946, when a small family business engaged in the repacking of flour and coffee products was established.', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUahkoNKuswQ2mov4_6TKIrIv6huhToFz5g&s'),
+('PepsiCo', 'PepsiCo, Inc., based in Purchase, New York, is one of the world''s largest food and beverage companies. PepsiCo is known for its Frito-Lay snack food brands, soft drinks under its Gatorade, Mountain Dew, and namesake Pepsi brands', 'https://skai.io/wp-content/uploads/2021/05/PepsiCo-Small-Logo.png');
 `;
 
 async function main() {

@@ -18,5 +18,10 @@ html
           window.location.href = `/categories/${category}/delete`;
         }
       }
+      function confirmDeleteBrand(brand) {
+        if (window.confirm(`Are you sure you want to delete ${brand}?`)) {
+          window.location.href = `/brands/${brand}/delete`;
+        }
+      }
   body
     block content
