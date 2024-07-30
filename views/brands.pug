@@ -1,15 +1,17 @@
 extends layout
 
 block content
-  h1 #{title} 
-  p Welcome to #{title} 
-  div.buttonContainer 
-    button(onclick=`redirect('/')`) Return Home 
-    button(onclick=`redirect('/brands/create')`) Create new brand
+  div.nav 
+    img.logo(src='/images/snackShop.png' alt='Snack Shop Logo')
+    button(onclick=`redirect('/')`) Home 
+    button(onclick=`redirect('/items')`) Items 
+    button(onclick=`redirect('/categories')`) Categories
+    
+  div.categoryNav
+    b #{title}  
+    button(onclick=`redirect('/categories/create')`) Create brand
   each brand in allBrands
-    button.categoryContainer(onclick=`redirect('/brands/${brand.name}')`) 
+    button.itemContainer(onclick=`redirect('/brands/${brand.name}')`) 
       img.image(src=brand.image, alt='Brand image')
-      div.textContainer
-        p #{brand.name}
-        p #{brand.description}
+      p #{brand.name}
   

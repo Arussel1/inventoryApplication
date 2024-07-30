@@ -1,20 +1,261 @@
+/* CSS var and font */
+:root{
+  font-family:'Nunito',sans-serif;
+}
+/* Reset CSS */
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+/* Importance smooth */
+html {
+  scroll-behavior: smooth; 
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1rem "Montserrat", Helvetica, Arial, sans-serif;
+  --main-color: rgb(23, 189, 23);
+  --main-color-hover: rgb(14, 116, 14);
 }
 
 a {
   color: #00B7FF;
+  text-decoration: none;
+}
+
+a:hover{
+  cursor: pointer;
+  color: #08455e;
+}
+
+/* Nav bar */
+
+.nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 2rem 1rem 0;
+  background-color: var(--main-color);
+  height: 100px;
+  margin-bottom: 3rem;
+}
+
+.logo{
+  width: 75px;
+}
+
+.nav > button {
+  background-color: var(--main-color);
+  border: 0;
+  padding: 0 2rem;
+  font-size: 1.25rem;
+  font-family: 'Montserrat';
+  height: 100px;
+}
+
+.nav > button:hover{
+  cursor: pointer;
+  background-color: var(--main-color-hover);
+  border-radius: 8px;
+}
+
+/* Create, Update and Delete form */
+
+form {
+  background: linear-gradient(to right, rgb(23, 189, 23), rgb(14, 116, 14));
+  color:white;
+  width: 50%;
+  height: 80%;
+  display: block;
+  margin: 5rem auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+}
+
+form > .formTitle{
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+form > label {
+  margin-bottom: 0.5rem;
+}
+
+form > input,form > textarea, form > select, form > button {
+  height: 30px;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+  border: 0;
+  border-radius: 12px;
+  padding: 0 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+form > textarea{
+  height: 80px;
+  padding-top: 0.5rem;
+}
+
+form > button{
+  width: 20%;
+  height: 40px;
+  border: 0;
+}
+
+form > button:hover{
+  cursor: pointer;
+}
+
+/* Home page */
+
+.hero{
+  display: flex;
+  padding: 2rem 2rem 2rem 4rem;
+  justify-content: center;
+}
+
+.heroImage{
+  max-width: 30%;
+  height: 300px;
+  margin-left: 10%;
+}
+
+@media only screen and (min-width: 720px) {
+  .heroImage{
+    margin-left: 20%;
+  }
+}
+
+.heroText > *{
+  margin-bottom: 2rem;
+}
+
+/* Items page */
+
+.itemNav,.categoryNav{
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.itemNav > b, .categoryNav > b {
+  margin-right: auto;
+  font-size: 1.25rem;
+}
+
+.itemNav > button, .specificItemButtonContainer > button, .categoryNav > button, .specificCategoryButtonContainer > button {
+  background-color: var(--main-color);
+  border: 0;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.itemNav > button:hover, .specificItemButtonContainer > button:hover, .categoryNav > button:hover,.specificCategoryButtonContainer > button:hover{
+  cursor: pointer;
+  background-color: var(--main-color-hover);
+}
+
+.itemContainer{
+  width: 250px;
+  height: 250px;
+  background-color: rgba(245, 235, 235, 0.521);
+  border: 0;
+  margin: 25px;
+  border-radius: 12px;
+  box-shadow: 1px 1px rgba(172, 164, 164, 0.534);
+  font-size: 1rem;
+}
+
+.itemContainer:hover{
+  cursor: pointer;
+  background-color: rgba(184, 180, 180, 0.521);
+}
+
+.itemContainer > p{
+  margin-top: 1rem;
 }
 
 .image{
   mix-blend-mode: multiply;
-  width: 200px;
-  height: 200px;
+  width: 175px;
+  height: 175px;
+}
+
+/* Item instance page */
+
+.specificItemContainer{
+  display: flex;
+  padding: 2rem;
+}
+
+.textContainer{
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  border-radius: 8px;
+  width: 100%;
+  padding: 0.5rem 2rem;
+}
+
+.textContainer > *{
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .specificImage{
   mix-blend-mode: multiply;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
+  margin-right: 4rem;
+}
+
+.specificItemName{
+  font-size:1.25rem;
+  font-weight: 700
+}
+
+.specificItemButtonContainer,.specificCategoryButtonContainer{
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: auto;
+}
+
+/* Categories page */
+
+.categoryContainer{
+  display: flex;
+  padding: 1rem 2rem;
+  gap: 25px;
+}
+
+.categoryContainer > img {
+  border-radius: 8px;
+}
+
+.categoryTextContainer{
+  display:flex;
+  flex-direction: column;
+}
+
+.categoryTextContainer > b{
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.itemTitle{
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.25rem;
 }

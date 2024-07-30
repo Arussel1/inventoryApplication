@@ -3,7 +3,7 @@ const { body, validationResult } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 
 const renderedBrands = asyncHandler(async (req, res) => {
-    const result = await Pool.query('SELECT name, image, description FROM brand');
+    const result = await Pool.query('SELECT name, image FROM brand');
     const allBrands = result.rows;
     res.render('brands', { title: "Brand", allBrands: allBrands });
 });

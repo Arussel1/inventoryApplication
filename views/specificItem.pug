@@ -1,17 +1,21 @@
 extends layout
 
 block content
+    div.nav 
+        img.logo(src='/images/snackShop.png' alt='Snack Shop Logo')
+        button(onclick=`redirect('/')`) Home 
+        button(onclick=`redirect('/items')`) Items
+        button(onclick=`redirect('/categories')`) Categories
+        button(onclick=`redirect('/brands')`) Brands
     div.specificItemContainer
         img.specificImage(src=item.image, alt='Item image')
         div.textContainer
-            h1 #{item.name}
+            p.specificItemName #{item.name}
             p #{item.description} 
-            p $#{item.price} 
+            p Price: $#{item.price} 
             p Quantities: #{item.quantity}
-            a(href=`/category/${item.category}`) Category: #{item.category} 
-            br
-            a(href=`/brand/${item.brand}`) Brand: #{item.brand} 
+            a(href=`/categories/${item.category}`) Category: #{item.category} 
+            a(href=`/brands/${item.brand}`) Brand: #{item.brand} 
             div.specificItemButtonContainer 
                 button(onclick=`redirect('/items/${item.name}/update')`) Update Item
                 button(onclick=`confirmDeleteItem('${item.name}')`) Delete Item
-                button(onclick=`redirect('/items')`) Return to Item  

@@ -1,10 +1,14 @@
 extends layout
 
 block content
-  h1 #{title} 
-  p Welcome to #{title} 
+  
   div.nav 
+    img.logo(src='/images/snackShop.png' alt='Snack Shop Logo')
     button(onclick=`redirect('/items')`) Items 
     button(onclick=`redirect('/categories')`) Categories
     button(onclick=`redirect('/brands')`) Brands
-  
+  div.hero
+    div.heroText
+      h1 #{title} 
+      p Welcome to #{title}. Use the navigate bar above to go around inventory.
+    img.heroImage(src='/images/heroImage.jpg' alt='Hero Image')

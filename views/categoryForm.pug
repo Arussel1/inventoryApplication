@@ -1,8 +1,15 @@
 extends layout
 
 block content
-    h1 Update Category
+    div.nav 
+     img.logo(src='/images/snackShop.png' alt='Snack Shop Logo')
+     button(onclick=`redirect('/')`) Home 
+     button(onclick=`redirect('/items')`) Items 
+     button(onclick=`redirect('/categories')`) Categories
+     button(onclick=`redirect('/brands')`) Brands
+    
     form(action= '/categories/' + category.name + '/update' method='POST')
+     p.formTitle Update Category
      label(for='name') Name: 
      input(type='text' name='name' value=category.name min='1' required)
      br
@@ -12,7 +19,7 @@ block content
      br
 
      label(for='image') Image (web URL): 
-     input(type='text' name='image' value=category.image)
+     input(type='text' name='image' value=category.image min='1' required)
      br
           
-     button(type='submit') Update Category
+     button(type='submit') Submit

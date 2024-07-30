@@ -3,7 +3,6 @@ const router = express.Router();
 const itemsControllers = require('../controllers/itemsControllers');
 const categoriesControllers = require('../controllers/categoriesControllers');
 const brandControllers = require('../controllers/brandControllers.js');
-
 /* Home page. */
 
 router.get('/', (req, res, next) => {

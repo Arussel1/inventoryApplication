@@ -1,18 +1,21 @@
 extends layout
 
 block content
-    h1 Create Category
+    div.nav 
+     img.logo(src='/images/snackShop.png' alt='Snack Shop Logo')
+     button(onclick=`redirect('/')`) Home
+     button(onclick=`redirect('/items')`) Items  
+     button(onclick=`redirect('/categories')`) Categories
+     button(onclick=`redirect('/brands')`) Brands
     form(action= '/categories/create' method='POST')
-     label(for='name') Name: 
+     p.formTitle Create Category
+     label(for='name') Name
      input(type='text' name='name' value='' min='1' required)
-     br
 
-     label(for='description') Description: 
+     label(for='description') Description
      textarea( name='description' rows="3" cols="40" ) 
-     br
 
      label(for='image') Image (web URL): 
-     input(type='text' name='image' value='')
-     br
+     input(type='text' name='image' value='' min='1' required)
           
-     button(type='submit') Create Category
+     button(type='submit') Submit

@@ -1,9 +1,9 @@
-const Pool = require('../db/pool');
+const Pool = require('../db/pool.js');
 const { body, validationResult } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 
 const renderedCategories = asyncHandler(async (req, res) => {
-    const result = await Pool.query('SELECT name, image, description FROM categories');
+    const result = await Pool.query('SELECT name, image FROM categories');
     const allCategories = result.rows;
     res.render('categories', { title: "Category", allCategories });
 });

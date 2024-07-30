@@ -1,11 +1,14 @@
 extends layout
 
 block content
-  h1 #{title} 
-  p Welcome to #{title} 
-  div.buttonContainer 
-    button(onclick=`redirect('/')`) Return Home 
-    button(onclick=`redirect('/items/create')`) Create new item
+  div.nav 
+    img.logo(src='/images/snackShop.png' alt='Snack Shop Logo')
+    button(onclick=`redirect('/')`) Home 
+    button(onclick=`redirect('/categories')`) Categories
+    button(onclick=`redirect('/brands')`) Brands
+  div.itemNav
+    b Item Inventory
+    button(onclick=`redirect('/items/create')`) Add Item
   each item in allItems
     button.itemContainer(onclick=`redirect('/items/${item.name}')`) 
       img.image(src=item.image, alt='Item image')

@@ -1,48 +1,48 @@
 extends layout
 
 block content
-    h1 Update Item
+    div.nav 
+      img.logo(src='/images/snackShop.png' alt='Snack Shop Logo')
+      button(onclick=`redirect('/')`) Home 
+      button(onclick=`redirect('/items')`) Items 
+      button(onclick=`redirect('/categories')`) Categories
+      button(onclick=`redirect('/brands')`) Brands
     form(action= '/items/' + item.name + '/update' method='POST')
-     label(for='name') Name: 
-     input(type='text' name='name' value=item.name min='1')
-     br
+     p.formTitle Update Item
+     label(for='name') Name 
+     input(type='text' name='name' value=item.name min='1' required)
 
-     label(for='description') Description: 
+     label(for='description') Description
      textarea( name='description' rows="3" cols="40" ) #{item.description}
-     br
 
-     label(for='price') Price: 
+     label(for='price') Price
      input(type='number' name='price' step="0.01" value=item.price min='0')
-     br
 
-     label(for='quantity') Quantities: 
+     label(for='quantity') Quantities
      input(type='number' name='quantity' value=item.quantity min='1')
-     br
 
-     label(for='category') Category: 
+     label(for='category') Category
      select(name='category')
       each cat in item.allcategories
         if item.category == cat
           option(value=cat selected) #{cat}
         else
           option(value=cat) #{cat}
-     br
     
           
-     label(for='brand') Brand: 
+     label(for='brand') Brand
      select(name='brand')
       each brand in item.allbrand
         if item.brand == brand
           option(value=brand selected) #{brand}
         else
           option(value=brand) #{brand}
-     br
      
-     label(for='image') Image (web URL): 
-     input(type='text' name='image' value=item.image min=1)
+     label(for='image') Image (web URL)
+     input(type='text' name='image' value=item.image min='1' required)
      br
           
-     button(type='submit') Update Item
+     button(type='submit') Submit
   
     each error in errors 
      p #{error.msg}

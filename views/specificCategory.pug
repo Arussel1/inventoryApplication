@@ -1,18 +1,26 @@
 extends layout
 
 block content
-  div.categoryContainer
-      img.image(src=category.image, alt='Category image')
-      div.textContainer
-        p #{category.name}
-        p #{category.description}
+  div.nav 
+    img.logo(src='/images/snackShop.png' alt='Snack Shop Logo')
+    button(onclick=`redirect('/')`) Home 
+    button(onclick=`redirect('/items')`) Items
+    button(onclick=`redirect('/categories')`) Categories
+    button(onclick=`redirect('/brands')`) Brands
 
-  p Item in #{category.name}
+  div.categoryContainer
+    img.image(src=category.image, alt='Category image')
+    div.categoryTextContainer
+      b #{category.name}
+      p #{category.description}
+      div.specificCategoryButtonContainer
+        button(onclick=`redirect('/categories/${category.name}/update')`) Update Categories
+        button(onclick=`confirmDeleteCategory('${category.name}')`) Delete Categories
+        
+  p.itemTitle Items
   each item in items
     button.itemContainer(onclick=`redirect('/items/${item.name}')`) 
       img.image(src=item.image, alt='Item image')
       p #{item.name}
-  button(onclick=`redirect('/categories/${category.name}/update')`) Update Categories
-  button(onclick=`confirmDeleteCategory('${category.name}')`) Delete Categories
-  button(onclick=`redirect('/categories')`) Return to Categories 
+  
 
