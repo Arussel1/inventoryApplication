@@ -1,6 +1,6 @@
-# Message board
+# Inventory Web App
 This is the Inventory Application project to practice Node.js and Express.js with pug HTML preprocessor <br>
-**Demo**: :point_right:[**Click here**](https://minimessageboard-fgrl.onrender.com/):point_left:. <br>
+**Demo**: :point_right:[**Click here**](https://inventoryapplication.onrender.com/):point_left:. <br>
 Please allow up to 1 minutes for the website to load.
 ## Install and set up
 Follow these step below to set up the website in your local machine.
